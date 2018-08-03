@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 
+import productReducer from "./productReducer";
 import todos, { TodoStateRecord } from "./todoReducer";
 
 const rootInitialState = {
@@ -8,6 +9,7 @@ const rootInitialState = {
 
 const rootReducer = combineReducers({
     todos,
+    products: productReducer,
 });
 
 export default rootReducer;
