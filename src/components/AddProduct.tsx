@@ -29,11 +29,11 @@ class AddProduct extends React.Component<IAddProductProps, IAddProductState> {
     }
 
     public render() {
-        if (this.props.products.length === 0) { return null; }
-
         return (
             <div>
-                <p>{this.props.products}</p>
+                {
+                    this.props.products.map((prod) => (<p>{prod}</p>))
+                }
                 <input onChange={this.onInputChange} />
                 <button onClick={this.addProduct}>Add</button>
             </div>
@@ -43,7 +43,7 @@ class AddProduct extends React.Component<IAddProductProps, IAddProductState> {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products,
+        products: state.products.products,
     };
 };
 const mapDispatchToProps = (dispatch) => {
