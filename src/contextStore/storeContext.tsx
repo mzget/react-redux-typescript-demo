@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { IStore, IStoreState } from "./store";
+import { ActionDelegate, IStore, IStoreState } from "./store";
 
 const initialStore = {
     user: "undefined",
@@ -16,7 +16,7 @@ class EnhancedContextStore extends Component<any, IStoreState> {
         this.updateState = this.updateState.bind(this);
     }
 
-    public updateState(actionDelegate: (prevS: IStoreState, prevP: any) => any, callback?: () => void) {
+    public updateState(actionDelegate: ActionDelegate, callback?: () => void) {
         this.setState(actionDelegate, (callback) ? callback : () => console.log(this.state));
     }
 
