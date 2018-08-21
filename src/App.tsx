@@ -5,6 +5,7 @@ import AddProduct from "./components/AddProduct";
 import AddUser from "./components/AddUser";
 import Jump from "./components/Jump";
 import TodoComp from "./components/TodoComp";
+import { VirtualizeList } from "./components/VirtualizeList";
 import { EnhancedContextStore } from "./contextStore/storeContext";
 import logo from "./logo.svg";
 
@@ -42,6 +43,7 @@ const About = (props) => {
   return (
     <div>
       <h2>{props.location.pathname}</h2>
+      <VirtualizeList />
     </div>
   );
 };
